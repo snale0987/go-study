@@ -37,3 +37,11 @@ func Test_slice_foreach(t *testing.T) {
 func Test_slice_foreach_while(t *testing.T) {
 	slice_foreach_while()
 }
+
+func Test_slice_times(t *testing.T) {
+	slice_times()
+}
+
+func Test_slice_parallel_times(t *testing.T) {
+	slice_parallel_times()
+}

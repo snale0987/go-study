@@ -2,9 +2,11 @@ package slice_helper
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/samber/lo"
+	"github.com/samber/lo/parallel"
 )
 
 func slice_filter() {
@@ -93,4 +95,18 @@ func slice_foreach_while() {
 		fmt.Println(x)
 		return true
 	})
+}
+
+func slice_times() {
+	times := lo.Times(3, func(i int) string {
+		return strconv.FormatInt(int64(i), 10)
+	})
+	fmt.Println(times)
+}
+
+func slice_parallel_times() {
+	times := parallel.Times(3, func(i int) string {
+		return strconv.FormatInt(int64(i), 10)
+	})
+	fmt.Println(times)
 }
