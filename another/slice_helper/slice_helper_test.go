@@ -21,3 +21,19 @@ func Test_slice_filter_uniq_map(t *testing.T) {
 func Test_slice_flat_map(t *testing.T) {
 	slice_flat_map()
 }
+
+func Test_slice_reduce(t *testing.T) {
+	slice_reduce()
+}
+
+func Test_slice_reduce_right(t *testing.T) {
+	slice_reduce_right()
+}
+
+func Test_slice_foreach(t *testing.T) {
+	slice_foreach()
+}
+
+func Test_slice_foreach_while(t *testing.T) {
+	slice_foreach_while()
+}

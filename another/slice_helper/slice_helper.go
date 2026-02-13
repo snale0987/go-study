@@ -62,5 +62,35 @@ func slice_flat_map() {
 	})
 
 	fmt.Println(allTags)
+}
 
+func slice_reduce() {
+	sum := lo.Reduce([]int{1, 2, 3, 4, 5}, func(acc int, item int, _ int) int {
+		return acc + item
+	}, 0)
+	fmt.Println(sum)
+}
+
+func slice_reduce_right() {
+	sum := lo.ReduceRight([]int{1, 2, 3, 4, 5}, func(acc int, item int, _ int) int {
+		return acc + item
+	}, 0)
+	fmt.Println(sum)
+}
+
+func slice_foreach() {
+	lo.ForEach([]string{"hello", "world"}, func(x string, _ int) {
+		println(x)
+	})
+}
+
+func slice_foreach_while() {
+	list := []int64{1, 2, -42, 4}
+	lo.ForEachWhile(list, func(x int64, _ int) bool {
+		if x < 0 {
+			return false
+		}
+		fmt.Println(x)
+		return true
+	})
 }
