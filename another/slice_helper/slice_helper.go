@@ -110,3 +110,8 @@ func slice_parallel_times() {
 	})
 	fmt.Println(times)
 }
+
+func slice_uniq() {
+	uniqValues := lo.Uniq([]int{1, 2, 2, 1})
+	fmt.Println(uniqValues)
+}

@@ -45,3 +45,7 @@ func Test_slice_times(t *testing.T) {
 func Test_slice_parallel_times(t *testing.T) {
 	slice_parallel_times()
 }
+
+func Test_slice_uniq(t *testing.T) {
+	slice_uniq()
+}
