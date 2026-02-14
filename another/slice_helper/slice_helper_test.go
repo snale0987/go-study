@@ -49,3 +49,23 @@ func Test_slice_parallel_times(t *testing.T) {
 func Test_slice_uniq(t *testing.T) {
 	slice_uniq()
 }
+
+func Test_slice_uniq_by(t *testing.T) {
+	slice_uniq_by()
+}
+
+func Test_slice_group_by(t *testing.T) {
+	slice_group_by()
+}
+
+func Test_slice_group_by_map(t *testing.T) {
+	slice_group_by_map()
+}
+
+func Test_slice_chunk(t *testing.T) {
+	slice_chunk()
+}
+
+func Test_slice_partitions(t *testing.T) {
+	slice_partitions()
+}

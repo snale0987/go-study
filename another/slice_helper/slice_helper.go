@@ -115,3 +115,54 @@ func slice_uniq() {
 	uniqValues := lo.Uniq([]int{1, 2, 2, 1})
 	fmt.Println(uniqValues)
 }
+
+func slice_uniq_by() {
+	uniqByValues := lo.UniqBy([]int{1, 2, 3, 4, 5, 6}, func(i int) int {
+		return i % 3
+	})
+	fmt.Println(uniqByValues)
+}
+
+func slice_group_by() {
+	groupByValues := lo.GroupBy([]int{1, 2, 3, 4, 5, 6}, func(i int) int {
+		return i % 3
+	})
+	fmt.Println(groupByValues)
+}
+
+func slice_group_by_map() {
+	groupByMap := lo.GroupByMap([]int{1, 2, 3, 4, 5, 6}, func(i int) (int, int) {
+		return i % 3, i * 2
+	})
+	fmt.Println(groupByMap)
+}
+
+func slice_chunk() {
+	chunk1 := lo.Chunk([]int{0, 1, 2, 3, 4, 5}, 2)
+	fmt.Println(chunk1)
+	// [][]int{{0, 1}, {2, 3}, {4, 5}}
+
+	chunk2 := lo.Chunk([]int{0, 1, 2, 3, 4, 5, 6}, 2)
+	// [][]int{{0, 1}, {2, 3}, {4, 5}, {6}}
+	fmt.Println(chunk2)
+
+	chunk3 := lo.Chunk([]int{}, 2)
+	// [][]int{}
+	fmt.Println(chunk3)
+
+	chunk4 := lo.Chunk([]int{0}, 2)
+	// [][]int{{0}}
+	fmt.Println(chunk4)
+}
+
+func slice_partitions() {
+	partitions := lo.PartitionBy([]int{-2, -1, 0, 1, 2, 3, 4, 5}, func(x int) string {
+		if x < 0 {
+			return "negative"
+		} else if x%2 == 0 {
+			return "even"
+		}
+		return "odd"
+	})
+	fmt.Println(partitions)
+}
